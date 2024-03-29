@@ -8,4 +8,18 @@ export default {
     extend: {},
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["light"],
+          fontFamily: "Courier New, sans-serif",
+        },
+        dark: {
+          ...require("daisyui/src/theming/themes")["dark"],
+          fontFamily: "Courier New, sans-serif",
+        },
+      },
+    ],
+  },
 }
