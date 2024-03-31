@@ -2,8 +2,11 @@ import MagnifyIcon from "@components/ui/icons/magnify";
 import MoonIcon from "@components/ui/icons/moon";
 import PokeballIcon from "@components/ui/icons/pokeball";
 import SunIcon from "@components/ui/icons/sun";
+import { useTheme } from "@context/theme";
 
 export function Header() {
+
+  const { toggleTheme, theme } = useTheme();
 
   return (
     <header className="w-full shadow-md">
@@ -21,7 +24,7 @@ export function Header() {
               <input
                 id="pokemon-search"
                 type="text"
-                className="grow"
+                className="grow w-96"
                 placeholder="Search"
               />
               <kbd className="kbd kbd-sm">⌘</kbd>
@@ -38,7 +41,9 @@ export function Header() {
                 id="theme-switch"
                 className="theme-controller"
                 type="checkbox"
+                checked={theme === "light"}
                 aria-label="Alternar tema entre Claro e Escuro"
+                onChange={toggleTheme}
               />
               <SunIcon
                 className="swap-on fill-current size-7"
