@@ -8,6 +8,8 @@ interface Alias {
 
 const alias = (path = "src") => ({
   "@components": `${path}/components`,
+  "@context": `${path}/context`,
+  "@utils": `${path}/utils`,
 });
 
 const resolvedAlias = (alias: Alias): Record<string, string> =>
