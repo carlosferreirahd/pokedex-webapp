@@ -9,14 +9,14 @@ export function Footer() {
         <div className="footer footer-center p-4">
           <aside className="font-semibold">
             <p>
-              Feito com
+              Made with
               {" "}
               <HeartIcon
                 className="inline-block align-middle size-6 text-red-600"
-                aria-label="amor"
+                aria-label="love"
               />
               {" "}
-              por
+              by
               {" "}
               <a
                 className="link link-hover hover:link-primary"

@@ -19,17 +19,19 @@ export function Header() {
             </h1>
           </div>
           <div className="navbar-center">
-            <label htmlFor="pokemon-search" className="input input-primary input-bordered flex items-center gap-2">
-              <MagnifyIcon className="size-5 mb-1 inline-block align-middle" />
-              <input
-                id="pokemon-search"
-                type="text"
-                className="grow w-96"
-                placeholder="Search"
-              />
-              <kbd className="kbd kbd-sm">⌘</kbd>
-              <kbd className="kbd kbd-sm">K</kbd>
-            </label>
+            <form className="form-control">
+              <label htmlFor="pokemon-search" className="input input-primary input-bordered flex items-center gap-2">
+                <MagnifyIcon className="size-5 mb-1 inline-block align-middle" />
+                <input
+                  id="pokemon-search"
+                  type="text"
+                  className="grow"
+                  placeholder="Search..."
+                />
+                <kbd className="kbd kbd-sm">Ctrl</kbd>
+                <kbd className="kbd kbd-sm">K</kbd>
+              </label>
+            </form>
           </div>
           <div className="navbar-end">
             <label
@@ -42,16 +44,16 @@ export function Header() {
                 className="theme-controller"
                 type="checkbox"
                 checked={theme === "light"}
-                aria-label="Alternar tema entre Claro e Escuro"
+                aria-label="Switch between Light and Dark themes"
                 onChange={toggleTheme}
               />
               <SunIcon
                 className="swap-on fill-current size-7"
-                aria-label="Tema claro"
+                aria-label="Light theme"
               />
               <MoonIcon
                 className="swap-off fill-current size-7"
-                aria-label="Tema escuro"
+                aria-label="Dark theme"
               />
             </label>
           </div>
