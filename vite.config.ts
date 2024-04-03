@@ -10,6 +10,7 @@ const alias = (path = "src") => ({
   "@components": `${path}/components`,
   "@context": `${path}/context`,
   "@services": `${path}/services`,
+  "@shared": `${path}/shared`,
   "@utils": `${path}/utils`,
 });
 
