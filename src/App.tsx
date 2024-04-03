@@ -1,6 +1,5 @@
 import { Content, Footer, Header } from "@components/layout";
 import { useTheme } from "@context/theme";
-import cn from "@utils/cn";
 
 function App() {
 
@@ -9,7 +8,7 @@ function App() {
   return (
     <div
       data-theme={theme}
-      className={cn("w-full min-h-screen flex flex-col", { "dark": theme === "dark" })}
+      className="w-full min-h-screen flex flex-col"
     >
       <Header />
       <Content>
