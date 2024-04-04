@@ -12,7 +12,7 @@ export function PokemonBadge({
   return (
     <div
       className={cn(
-        "badge text-xs text-base-200 font-semibold opacity-100",
+        "badge text-base-200 font-semibold",
         {
           "bg-normal": pokemonType === "normal",
           "bg-fire": pokemonType === "fire",
