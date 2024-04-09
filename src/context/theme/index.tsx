@@ -57,6 +57,7 @@ function ThemeProvider({
 
   useEffect(() => {
     saveToStorage(STORAGE_THEME_KEY, theme);
+    document?.documentElement?.setAttribute("data-theme", theme);
   }, [theme]);
 
   const providerValue = useMemo<IThemeContextData>(() => ({
