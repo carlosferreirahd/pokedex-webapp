@@ -7,24 +7,78 @@ export default {
   theme: {
     extend: {
       colors: {
-        normal: '#A8A77A',
-        fire: '#EE8130',
-        water: '#6390F0',
-        electric: '#F7D02C',
-        grass: '#7AC74C',
-        ice: '#96D9D6',
-        fighting: '#C22E28',
-        poison: '#A33EA1',
-        ground: '#E2BF65',
-        flying: '#A98FF3',
-        psychic: '#F95587',
-        bug: '#A6B91A',
-        rock: '#B6A136',
-        ghost: '#735797',
-        dragon: '#6F35FC',
-        dark: '#705746',
-        steel: '#B7B7CE',
-        fairy: '#D685AD',
+        normal: {
+          DEFAULT: '#A8A77A',
+          lighter: '#bebd98',
+        },
+        fire: {
+          DEFAULT: '#EE8130',
+          lighter: '#f6bc7b',
+        },
+        water: {
+          DEFAULT: '#6390F0',
+          lighter: '#99b9f7',
+        },
+        electric: {
+          DEFAULT: '#F7D02C',
+          lighter: '#fae04a',
+        },
+        grass: {
+          DEFAULT: '#7AC74C',
+          lighter: '#a0db7b',
+        },
+        ice: {
+          DEFAULT: '#96D9D6',
+          lighter: '#bae7e5',
+        },
+        fighting: {
+          DEFAULT: '#C22E28',
+          lighter: '#f7adaa',
+        },
+        poison: {
+          DEFAULT: '#A33EA1',
+          lighter: '#ebbaed'
+        },
+        ground: {
+          DEFAULT: '#E2BF65',
+          lighter: '#ecd89b',
+        },
+        flying: {
+          DEFAULT: '#A98FF3',
+          lighter: '#c7b9f9',
+        },
+        psychic: {
+          DEFAULT: '#F95587',
+          lighter: '#ffa2b9',
+        },
+        bug: {
+          DEFAULT: '#A6B91A',
+          lighter: '#e1ed69',
+        },
+        rock: {
+          DEFAULT: '#B6A136',
+          lighter: '#d7ce6d',
+        },
+        ghost: {
+          DEFAULT: '#735797',
+          lighter: '#d1c4e3',
+        },
+        dragon: {
+          DEFAULT: '#6F35FC',
+          lighter: '#bbafff',
+        },
+        dark: {
+          DEFAULT: '#705746',
+          lighter: '#b9a98b',
+        },
+        steel: {
+          DEFAULT: '#B7B7CE',
+          lighter: '#c7c8da',
+        },
+        fairy: {
+          DEFAULT: '#D685AD',
+          lighter: '#e8b9d2',
+        },
       },
     },
     container: {
