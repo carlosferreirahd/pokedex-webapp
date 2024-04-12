@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import XMarkIcon from "@components/ui/icons/x-mark";
 import { PokemonSprite } from "./sprite";
 import { PokemonBadge } from "./badge";
+import { StatProgress } from "./stat-progress";
 import { statNameToAcronym } from "@utils/helpers";
 import { IStatsData, ITypesData } from "@shared/interfaces/pokemon.interface";
 
@@ -63,7 +64,7 @@ export const DetailsModal = forwardRef<HTMLDialogElement, DetailsModalProps>((
         if (onClose) onClose();
       }}
     >
-      <div
+      <section
         className="modal-box"
         onClick={(e) => e?.stopPropagation()}
       >
@@ -88,7 +89,7 @@ export const DetailsModal = forwardRef<HTMLDialogElement, DetailsModalProps>((
             className="object-cover mask mask-squircle p-2"
             maskType={types[0]?.type?.name}
             src={front_image}
-            alt={`modal ${name} front`}
+            alt={`modal ${name} front image`}
           />
           <ul className="flex gap-3">
             {types.map(({ type }) => (
@@ -118,24 +119,23 @@ export const DetailsModal = forwardRef<HTMLDialogElement, DetailsModalProps>((
           <dl className="w-full px-6 grid grid-cols-[max-content_max-content_auto] gap-x-2">
             {stats.map(({ stat, base_stat }) => (
               <React.Fragment key={stat.name}>
-                <dt className="col-start-1">
+                <dt className="col-start-1 text-right font-semibold">
                   {statNameToAcronym[stat.name]}
                 </dt>
-                <dd className="col-start-2 pl-6">
+                <dd className="col-start-2 pl-5 text-right">
                   {base_stat}
                 </dd>
                 <dd className="col-start-3 flex items-center">
-                  <progress
-                    className="w-full h-3 progress progress-primary"
+                  <StatProgress
                     value={base_stat}
-                    max={255}
+                    maxValue={255}
                   />
                 </dd>
               </React.Fragment>
             ))}
           </dl>
         </div>
-      </div>
+      </section>
     </dialog>,
     portalContainer
   );
