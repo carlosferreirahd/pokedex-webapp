@@ -1,4 +1,5 @@
 import { Content, Footer, Header } from "@components/layout";
+import { PokemonList } from "@components/pokemon-list";
 
 function App() {
 
@@ -6,7 +7,7 @@ function App() {
     <div className="w-full min-h-screen flex flex-col">
       <Header />
       <Content>
-        main content
+        <PokemonList />
       </Content>
       <Footer />
     </div>
