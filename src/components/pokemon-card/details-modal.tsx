@@ -4,6 +4,7 @@ import XMarkIcon from "@components/ui/icons/x-mark";
 import { PokemonSprite } from "./sprite";
 import { PokemonBadge } from "./badge";
 import { StatProgress } from "./stat-progress";
+import cn from "@utils/cn";
 import { statNameToAcronym } from "@utils/helpers";
 import { IStatsData, ITypesData } from "@shared/interfaces/pokemon.interface";
 
@@ -91,10 +92,16 @@ export const DetailsModal = forwardRef<HTMLDialogElement, DetailsModalProps>((
             src={front_image}
             alt={`modal ${name} front image`}
           />
-          <ul className="flex gap-3">
+          <ul className={cn(
+            "mt-2",
+            { "join join-horizontal": types.length > 1 },
+          )}>
             {types.map(({ type }) => (
               <li key={type.name}>
-                <PokemonBadge pokemonType={type.name} />
+                <PokemonBadge
+                  className="join-item badge-lg"
+                  pokemonType={type.name}
+                />
               </li>
             ))}
           </ul>
