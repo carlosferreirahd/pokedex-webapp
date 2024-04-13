@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { ErrorMessage } from "@components/error-message";
 import { PokemonSprite } from "./sprite";
 import { PokemonBadge } from "./badge";
@@ -19,11 +18,10 @@ export function PokemonCard({
     isPending,
     isError,
     error,
+    modalRef,
     modalTriggered,
     setModalTriggered,
   } = usePokemon(pokemonName);
-
-  const modalRef = useRef<HTMLDialogElement>(null);
 
   if (isPending) {
     return (
