@@ -2,17 +2,22 @@ import cn from "@utils/cn";
 import { PokemonType } from "@shared/interfaces/pokemon.interface";
 
 interface PokemonBadgeProps {
-  pokemonType: PokemonType
+  className?: string;
+  pokemonType: PokemonType;
 }
 
 export function PokemonBadge({
+  className,
   pokemonType,
 }: Readonly<PokemonBadgeProps>) {
 
   return (
     <div
       className={cn(
-        "badge text-base-200 font-semibold",
+        "badge",
+        "text-base-200",
+        "font-semibold",
+        className,
         {
           "bg-normal": pokemonType === "normal",
           "bg-fire": pokemonType === "fire",
