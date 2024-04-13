@@ -3,7 +3,6 @@ import { PokemonSprite } from "./sprite";
 import { PokemonBadge } from "./badge";
 import { DetailsModal } from "./details-modal";
 import { usePokemon } from "./hooks";
-import { IStatsData, ITypesData } from "@shared/interfaces/pokemon.interface";
 
 interface PokemonCardProps {
   pokemonName: string;
@@ -44,14 +43,6 @@ export function PokemonCard({
     );
   }
 
-  const id: number = data?.id;
-  const spriteFront: string = data?.sprites?.front_default;
-  const spriteBack: string = data?.sprites?.back_default;
-  const pokemonTypes: Array<ITypesData> = data?.types;
-  const pokemonStats: Array<IStatsData> = data?.stats;
-  const weight: number = data?.weight;
-  const height: number = data?.height;
-
   return (
     <>
       <label
@@ -72,21 +63,21 @@ export function PokemonCard({
         <div className="px-4 pt-4 flex justify-evenly">
           <PokemonSprite
             className="object-cover"
-            src={spriteFront}
+            src={data?.sprites?.front_default}
             alt={`${pokemonName} front`}
           />
           <PokemonSprite
             className="object-cover"
-            src={spriteBack}
+            src={data?.sprites?.back_default}
             alt={`${pokemonName} back`}
           />
         </div>
         <div className="card-body">
           <h2 className="card-title">
-            {`#${id} ${pokemonName}`}
+            {`#${data?.id} ${pokemonName}`}
           </h2>
           <ul className="card-actions justify-end">
-            {pokemonTypes.map(({ type }) => (
+            {data?.types?.map(({ type }) => (
               <li key={type.name}>
                 <PokemonBadge pokemonType={type.name} />
               </li>
@@ -96,15 +87,7 @@ export function PokemonCard({
       </label>
       <DetailsModal
         ref={modalRef}
-        pokemonDetails={{
-          id,
-          name: pokemonName,
-          stats: pokemonStats,
-          types: pokemonTypes,
-          front_image: spriteFront,
-          height,
-          weight,
-        }}
+        pokemonDetails={data}
         onClose={() => setModalTriggered(false)}
       />
     </>

@@ -6,17 +6,7 @@ import { PokemonBadge } from "./badge";
 import { StatProgress } from "./stat-progress";
 import cn from "@utils/cn";
 import { statNameToAcronym } from "@utils/helpers";
-import { IStatsData, ITypesData } from "@shared/interfaces/pokemon.interface";
-
-interface IPokemonDetails {
-  id: number;
-  name: string;
-  types: Array<ITypesData>;
-  weight: number;
-  height: number;
-  stats: Array<IStatsData>;
-  front_image: string;
-}
+import { IPokemonDetails } from "@shared/interfaces/pokemon.interface";
 
 interface DetailsModalProps {
   pokemonDetails: IPokemonDetails;
@@ -51,8 +41,10 @@ export const DetailsModal = forwardRef<HTMLDialogElement, DetailsModalProps>((
     stats,
     weight,
     height,
-    front_image,
+    sprites,
   } = pokemonDetails;
+
+  const front_image = sprites?.front_default;
 
   if (!portalContainer) return null;
 

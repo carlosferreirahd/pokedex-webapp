@@ -38,3 +38,18 @@ export interface IStatsData {
     name: Stat;
   };
 }
+
+export interface ISpritesData {
+  front_default: string;
+  back_default: string;
+}
+
+export interface IPokemonDetails {
+  id: number;
+  name: string;
+  types: Array<ITypesData>;
+  weight: number;
+  height: number;
+  stats: Array<IStatsData>;
+  sprites: ISpritesData;
+}
