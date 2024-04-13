@@ -53,3 +53,10 @@ export interface IPokemonDetails {
   stats: Array<IStatsData>;
   sprites: ISpritesData;
 }
+
+export interface IPokemonList {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: Array<{ name: string }>;
+}
