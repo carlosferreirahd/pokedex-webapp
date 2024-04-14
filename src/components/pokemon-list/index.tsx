@@ -64,9 +64,13 @@ export function PokemonList() {
             { "btn-disabled": !data?.previous }
           )}
           disabled={!data?.previous}
+          aria-label="Go to previous page button"
           onClick={handlePreviousPage}
         >
-          <ChevronDoubleLeft className="size-4" />
+          <ChevronDoubleLeft
+            className="size-4"
+            aria-label="Previous page icon"
+          />
         </button>
         <button
           className={cn(
@@ -74,6 +78,7 @@ export function PokemonList() {
             { "btn-disabled": isFetching }
           )}
           disabled={isFetching}
+          aria-label="Current page description"
         >
           Page {pageNumber + 1}
         </button>
@@ -83,9 +88,13 @@ export function PokemonList() {
             { "btn-disabled": !data?.next || isMockedData }
           )}
           disabled={!data?.next || isMockedData}
+          aria-label="Go to next page button"
           onClick={handleNextPage}
         >
-          <ChevronDoubleRight className="size-4" />
+          <ChevronDoubleRight
+            className="size-4"
+            aria-label="Next page icon"
+          />
         </button>
       </div>
     </div>
