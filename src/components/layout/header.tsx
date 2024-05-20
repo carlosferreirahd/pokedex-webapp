@@ -4,7 +4,7 @@ import MoonIcon from "@components/ui/icons/moon";
 import PokeballIcon from "@components/ui/icons/pokeball";
 import SunIcon from "@components/ui/icons/sun";
 import { useTheme } from "@context/theme";
-import { createSearchParams, useNavigate } from "react-router-dom";
+import { Link, createSearchParams, useNavigate } from "react-router-dom";
 import cn from "@utils/cn";
 
 function Search() {
@@ -127,12 +127,14 @@ export function Header() {
       <div className="container">
         <div className="navbar bg-base-100 py-3">
           <div className="navbar-start">
-            <h1 className="font-semibold">
-              <PokeballIcon
-                className="inline-block align-middle size-7 mr-2 mb-1"
-              />
-              Pokédex
-            </h1>
+            <Link to="/" className="btn btn-ghost">
+              <h1 className="font-semibold">
+                <PokeballIcon
+                  className="inline-block align-middle size-7 mr-2 mb-1"
+                />
+                Pokédex
+              </h1>
+            </Link>
           </div>
           <div className={cn(
             "hidden",
