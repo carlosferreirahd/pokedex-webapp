@@ -1,26 +1,71 @@
+import { useCallback, useEffect, useRef } from "react";
 import MagnifyIcon from "@components/ui/icons/magnify";
 import MoonIcon from "@components/ui/icons/moon";
 import PokeballIcon from "@components/ui/icons/pokeball";
 import SunIcon from "@components/ui/icons/sun";
 import { useTheme } from "@context/theme";
+import { createSearchParams, useNavigate } from "react-router-dom";
 import cn from "@utils/cn";
 
 function Search() {
 
+  const navigate = useNavigate();
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const onSearch = useCallback((e: React.SyntheticEvent) => {
+    e.preventDefault();
+
+    const target = e.target as typeof e.target & {
+      "pokemon-search": { value: string };
+    };
+
+    const searchText = target["pokemon-search"]?.value;
+
+    if (!searchText) return;
+
+    // sends user to /search with search params
+    navigate({
+      pathname: 'search',
+      search: `?${createSearchParams({
+        'pokemon': searchText,
+      })}`,
+    });
+  }, [navigate]);
+
+  const keyCtrlKHandler = useCallback((e: KeyboardEvent) => {
+    if (e.ctrlKey && e.key?.toLocaleLowerCase() === "k") {
+      e.preventDefault();
+      inputRef?.current?.focus();
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("keydown", keyCtrlKHandler);
+    return () => {
+      window.removeEventListener("keydown", keyCtrlKHandler);
+    };
+  });
+
   return (
-    <form className={cn(
-      "form-control w-full",
-      "lg:w-auto"
-    )}>
+    <form
+      className={cn(
+        "form-control w-full",
+        "lg:w-auto"
+      )}
+      onSubmit={onSearch}
+    >
       <label
-        htmlFor="pokemon-search"
+        htmlFor="pokemon-search-input"
         className="input input-primary input-bordered flex items-center gap-2"
       >
         <MagnifyIcon
           className="size-5 mb-1 inline-block align-middle"
         />
         <input
-          id="pokemon-search"
+          ref={inputRef}
+          id="pokemon-search-input"
+          name="pokemon-search"
           type="text"
           className={cn(
             "grow w-full",
