@@ -9,6 +9,7 @@ interface Alias {
 const alias = (path = "src") => ({
   "@components": `${path}/components`,
   "@context": `${path}/context`,
+  "@pages": `${path}/pages`,
   "@services": `${path}/services`,
   "@shared": `${path}/shared`,
   "@utils": `${path}/utils`,
