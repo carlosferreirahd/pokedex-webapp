@@ -3,6 +3,7 @@ import { PokemonSprite } from "./sprite";
 import { PokemonBadge } from "./badge";
 import { DetailsModal } from "./details-modal";
 import { usePokemon } from "./hooks";
+import FaceFrown from "@components/ui/icons/face-frown";
 
 interface PokemonCardProps {
   pokemonName: string;
@@ -34,11 +35,30 @@ export function PokemonCard({
     );
   }
 
-  if (isError) {
+  if (isError || !pokemonName) {
+
+    if (error?.response?.status === 404 || !pokemonName) {
+      return (
+        <div className="card bg-base-200 shadow-xl h-full">
+          <div className="card-body items-center text-center">
+            <h2>
+              <FaceFrown
+                className="size-12 font-bold"
+                aria-label="Not found icon"
+              />
+            </h2>
+            <p className="card-title">
+              "{pokemonName}" not found.
+            </p>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <ErrorMessage
         className="items-start min-h-full"
-        errorMessage={error.message}
+        errorMessage={error?.message || "(No description)"}
       />
     );
   }
