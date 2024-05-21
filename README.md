@@ -13,7 +13,8 @@ Welcome to the Pokédex Webapp! This is a simple yet functional Pokédex applica
 - **Vite**: A next-generation frontend tooling that offers fast and optimized development;
 - **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for rapidly building custom user interfaces;
 - **[daisyUI](https://daisyui.com/)**: A UI component library for Tailwind CSS that simplifies styling with pre-designed components;
-- **[PokéAPI](https://pokeapi.co/)**: Open API to fetch pokémon information.
+- **[PokéAPI](https://pokeapi.co/)**: API to fetch pokémon information;
+- **[TanStack Query](https://tanstack.com/query/latest)**: A powerful library for handling asynchronous fetching, caching, and managing application state.
 
 ## Features
 
