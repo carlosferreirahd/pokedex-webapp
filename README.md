@@ -1,30 +1,50 @@
-# React + TypeScript + Vite
+# YAPW - Yet Another Pokédex Webapp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Pokédex Webapp! This is a simple yet functional Pokédex application built with modern web development technologies. The project was created for both fun and educational purposes, allowing me to explore and enhance my skills in various tools and frameworks.
 
-Currently, two official plugins are available:
+![Homepage](https://github.com/carlosferreirahd/pokedex-webapp/blob/main/readme/homepage.png?raw=true)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Details Modal](https://github.com/carlosferreirahd/pokedex-webapp/blob/main/readme/details-modal.png?raw=true)
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: A popular JavaScript library for building user interfaces;
+- **TypeScript**: A statically typed superset of JavaScript that helps catch errors early and improve code quality;
+- **Vite**: A next-generation frontend tooling that offers fast and optimized development;
+- **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for rapidly building custom user interfaces;
+- **[daisyUI](https://daisyui.com/)**: A UI component library for Tailwind CSS that simplifies styling with pre-designed components;
+- **[PokéAPI](https://pokeapi.co/)**: Open API to fetch pokémon information.
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- [x] **List All Pokémon**: Displays a comprehensive list of all Pokémon from the PokéAPI, with pagination for easy navigation;
+- [x] **Pokémon Details**: View detailed information for each Pokémon, including type, stats, weight, and height;
+- [x] **Search Functionality**: Quickly find Pokémon by name using the search feature;
+- [x] **Light and Dark Themes**: Toggle between light and dark themes, with automatic detection of the preferred system theme.
+
+## Installation and Setup
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository**:
+
+```sh
+git clone https://github.com/carlosferreirahd/pokedex-webapp.git
+cd pokedex-webapp
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. **Install dependencies**:
+
+```sh
+npm install
+```
+
+3. **Start the development server**:
+
+```sh
+npm run dev
+```
+
+4. **Have fun! 😄**:
+
+Open your browser and go to `http://localhost:3000` to see the application in action.
