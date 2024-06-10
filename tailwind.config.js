@@ -87,5 +87,5 @@ export default {
     }
   },
   darkMode: ['selector', '[data-theme="dark"]'],
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require('tailwindcss-animated')],
 }
