@@ -125,7 +125,7 @@ export function Header() {
   return (
     <header className="w-full shadow-md">
       <div className="container">
-        <div className="navbar bg-base-100 py-3">
+        <div className="navbar bg-base-100 py-3 animate-fade animate-once">
           <div className="navbar-start">
             <Link to="/" className="btn btn-ghost">
               <h1 className="font-semibold">

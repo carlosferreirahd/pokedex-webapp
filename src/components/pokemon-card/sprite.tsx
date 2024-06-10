@@ -14,14 +14,14 @@ export function PokemonSprite({
 
   if (!props.src) {
     return (
-      <figure>
+      <figure className="animate-fade animate-once animate-duration-[2000ms]">
         <PhotoIcon className="size-20" />
       </figure>
     );
   }
 
   return (
-    <figure>
+    <figure className="animate-fade animate-once animate-duration-[2000ms]">
       <img
         {...props}
         className={cn(

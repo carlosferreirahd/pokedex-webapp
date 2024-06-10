@@ -67,7 +67,7 @@ export function PokemonCard({
     <>
       <label
         htmlFor={`${pokemonName}-modal-trigger`}
-        className="card card-compact bg-base-200 shadow-xl h-full cursor-pointer focus-within:border focus-within:border-primary"
+        className="card card-compact bg-base-200 shadow-xl h-full cursor-pointer focus-within:border focus-within:border-primary transition-[transform] ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
       >
         <input
           id={`${pokemonName}-modal-trigger`}

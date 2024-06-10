@@ -37,7 +37,7 @@ export function PokemonList() {
   }
 
   return (
-    <div className="w-full h-full flex flex-col gap-16 items-end justify-between">
+    <div className="w-full h-full flex flex-col gap-16 items-end justify-between animate-fade-up">
       <div className="w-full h-full">
         <ul className="min-w-0 flex flex-row flex-wrap justify-center gap-y-6 -mx-3">
           {data.results.map(({ name: pokemonName }) => (

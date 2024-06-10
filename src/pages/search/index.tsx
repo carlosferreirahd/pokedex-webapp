@@ -28,7 +28,7 @@ export default function Search() {
       </h3>
       <div
         className={cn(
-          "flex-grow-0 flex-shrink-0 px-3 mx-auto",
+          "flex-grow-0 flex-shrink-0 px-3 mx-auto animate-fade-right animate-once",
           "basis-full max-w-full",
           "sm:basis-1/2 sm:max-w-[50%]",
           "lg:basis-1/3 lg:max-w-[33.333333%]",
